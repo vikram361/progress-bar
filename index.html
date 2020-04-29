@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <button class="stock" onclick="move()">Show Stock</button>
+  
   </body>
 
   <script src="main.js"></script>
@@ -30,10 +30,19 @@
     progress.style.width = progress.getAttribute("data-done") + "%";
     progress.style.opacity = 1;
 
+    setInterval( () => {
+      products = products - 1;
+      move();
+    }, 3000 );
+
+
+    let products = 10;
+
     function move() {
       var elem = document.getElementById("progress-done");
-      let products = 4;
-      var width = 0;
+      console.log(products);
+     
+      var width = 4;
 
       switch (products) {
         case 0:
@@ -71,7 +80,7 @@
           break;
       }
 
-      var id = setInterval(frame, 10);
+      var id = setInterval(frame, 2);
       function frame() {
         if (width > barWidth) {
           clearInterval(id);
