@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Hurry Only
+      <span id="demo"></span>
+      left in Stock
+    </h1>
+
+    <div class="progress">
+      <div class="progress-done">
+        &nbsp;
+      </div>
+    </div>
+
+    <button class="stock" onclick="move()">Show Stock</button>
+  </body>
+
+  <script src="main.js"></script>
+
+  <script>
+    const progress = document.querySelector(".progress-done");
+
+    progress.style.width = progress.getAttribute("data-done") + "%";
+    progress.style.opacity = 1;
+
+    function move() {
+      var elem = document.getElementById("progress-done");
+      let products = 4;
+      var width = 0;
+
+      switch (products) {
+        case 0:
+          barWidth = 0;
+          break;
+        case 1:
+          barWidth = 10;
+          break;
+        case 2:
+          barWidth = 20;
+          break;
+        case 3:
+          barWidth = 30;
+          break;
+        case 4:
+          barWidth = 40;
+          break;
+        case 5:
+          barWidth = 50;
+          break;
+        case 6:
+          barWidth = 60;
+          break;
+        case 7:
+          barWidth = 70;
+          break;
+        case 8:
+          barWidth = 80;
+          break;
+        case 9:
+          barWidth = 90;
+          break;
+        case 10:
+          barWidth = 100;
+          break;
+      }
+
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (width > barWidth) {
+          clearInterval(id);
+          products = barWidth / 10;
+        } else {
+          width++;
+          progress.style.width = width + "%";
+          document.getElementById("demo").innerHTML = products * 1;
+        }
+      }
+    }
+
+    
+  </script>
+</html>
