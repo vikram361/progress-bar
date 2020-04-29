@@ -18,8 +18,6 @@
         &nbsp;
       </div>
     </div>
-
-  
   </body>
 
   <script src="main.js"></script>
@@ -30,52 +28,81 @@
     progress.style.width = progress.getAttribute("data-done") + "%";
     progress.style.opacity = 1;
 
-    setInterval( () => {
+    setInterval(() => {
       products = products - 1;
       move();
-    }, 3000 );
+    }, 3000);
 
-
-    let products = 10;
+    let products = 20;
 
     function move() {
       var elem = document.getElementById("progress-done");
       console.log(products);
-     
+
       var width = 4;
 
       switch (products) {
-        case 0:
-          barWidth = 0;
-          break;
-        case 1:
-          barWidth = 10;
-          break;
-        case 2:
-          barWidth = 20;
-          break;
-        case 3:
+        // case 0:
+        //   barWidth = 0;
+        //   break;
+        // case 1:
+        //   barWidth = 5;
+        //   break;
+        // case 2:
+        //   barWidth = 10;
+        //   break;
+        // case 3:
+        //   barWidth = 15;
+        //   break;
+        // case 4:
+        //   barWidth = 20;
+        //   break;
+        // case 5:
+        //   barWidth = 25;
+        //   break;
+        case 6:
           barWidth = 30;
           break;
-        case 4:
-          barWidth = 40;
-          break;
-        case 5:
-          barWidth = 50;
-          break;
-        case 6:
-          barWidth = 60;
-          break;
         case 7:
-          barWidth = 70;
+          barWidth = 35;
           break;
         case 8:
-          barWidth = 80;
+          barWidth = 40;
           break;
         case 9:
-          barWidth = 90;
+          barWidth = 45;
           break;
         case 10:
+          barWidth = 50;
+          break;
+        case 11:
+          barWidth = 55;
+          break;
+        case 12:
+          barWidth = 60;
+          break;
+        case 13:
+          barWidth = 65;
+          break;
+        case 14:
+          barWidth = 70;
+          break;
+        case 15:
+          barWidth = 75;
+          break;
+        case 16:
+          barWidth = 80;
+          break;
+        case 17:
+          barWidth = 85;
+          break;
+        case 18:
+          barWidth = 90;
+          break;
+        case 19:
+          barWidth = 95;
+          break;
+        case 20:
           barWidth = 100;
           break;
       }
@@ -84,7 +111,7 @@
       function frame() {
         if (width > barWidth) {
           clearInterval(id);
-          products = barWidth / 10;
+          products = barWidth / 5;
         } else {
           width++;
           progress.style.width = width + "%";
@@ -92,7 +119,5 @@
         }
       }
     }
-
-    
   </script>
 </html>
