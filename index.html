@@ -4,17 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress Bar</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>
+    <h1 style="font-weight: 400;">
       Hurry Only
       <span id="demo"></span>
       left in Stock
     </h1>
 
-    <div class="progress">
-      <div class="progress-done">
+    <div class="progress" style="background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 10px;
+    width: 30rem;">
+      <div class="progress-done" style=" background: rgb(65, 168, 221);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 1s ease 0.3s;
+    ">
         &nbsp;
       </div>
     </div>
